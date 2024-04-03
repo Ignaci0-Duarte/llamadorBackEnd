@@ -81,6 +81,7 @@ const http = require("http");
 const WebSocket = require("ws");
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
@@ -118,7 +119,7 @@ wss.on("connection", function connection(ws) {
 });
 
 // Mensaje de conexión
-server.listen(3000, "0.0.0.0", () => {
+server.listen(PORT, "0.0.0.0", () => {
   console.log(
     `Servidor WebSocket corriendo en ws://${server.address().address}:${
       server.address().port
