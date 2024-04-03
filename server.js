@@ -78,12 +78,12 @@ wss.on("listening", function () {
 
 const express = require("express");
 const http = require("http");
-const WebSocket = require("ws");
+const { Server } = require("ws");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const server = http.createServer(app);
-const wss = new WebSocket.Server({ server });
+const wss = new Server({ server });
 
 // Mantener una referencia a los clientes conectados
 const clients = new Set();
