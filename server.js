@@ -121,8 +121,6 @@ wss.on("connection", function connection(ws) {
 // Mensaje de conexión
 server.listen(PORT, () => {
   console.log(
-    `Servidor WebSocket corriendo en ws://${server.address().address}:${
-      server.address().port
-    }`
+    `Servidor WebSocket corriendo en ws://${server.address().address}:${PORT}`
   );
 });
